@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/alob-mtc/ray_tracer/vec3"
+)
 
 func writePPM(w int32, h int32, max_value int32) {
 	fmt.Printf("P3\n%d %d\n%d\n", w, h, max_value)
@@ -26,4 +29,11 @@ func main() {
 	var maxValue int32 = 255
 
 	writePPM(width, height, maxValue)
+
+	v1 := vec3.New(1, 2, 3)
+	v2 := vec3.New(2, 6, 8)
+
+	v3 := v1.Add(v2)
+
+	fmt.Println("Added v1 and v2:", v3)
 }
